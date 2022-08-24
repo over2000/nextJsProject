@@ -1,31 +1,14 @@
 import Head from 'next/head'
-import { GetStaticProps } from 'next'
-
-import svg from 'public/svg1.svg'
-
 import styles from 'styles/home.module.scss'
+import { ColorModeSwitcher } from '../components/coloSwitcher'
 
-type HomeProps = {
-  title: string
-}
-
-export default function Home({ title }: HomeProps) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>
-          
-          
-      </title>
+        <title>Next</title>
       </Head>
-      <h1>{svg}
-      logo
-    </h1>
+      <ColorModeSwitcher />
     </div>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const title = 'O começo de algo...'
-  return { props: { title } }
 }
