@@ -1,10 +1,14 @@
 import 'styles/globals.scss'
+import { SessionProvider } from 'next-auth/react'
 import { MantineProvider, ColorSchemeProvider } from '@mantine/core'
 import { getCookie, setCookies } from 'cookies-next'
 import { useState } from 'react'
 
 export default function App(props) {
-  const { Component, pageProps } = props
+  const {
+    Component,
+    pageProps: { session, ...pageProps }
+  } = props
 
   const [colorScheme, setColorScheme] = useState(props.colorScheme)
 
@@ -18,18 +22,20 @@ export default function App(props) {
 
   return (
     <>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
-      >
-        <MantineProvider
-          theme={{ colorScheme }}
-          withGlobalStyles
-          withNormalizeCSS
+      <SessionProvider session={session}>
+        <ColorSchemeProvider
+          colorScheme={colorScheme}
+          toggleColorScheme={toggleColorScheme}
         >
-          <Component {...pageProps} />
-        </MantineProvider>
-      </ColorSchemeProvider>
+          <MantineProvider
+            theme={{ colorScheme }}
+            withGlobalStyles
+            withNormalizeCSS
+          >
+            <Component {...pageProps} />
+          </MantineProvider>
+        </ColorSchemeProvider>
+      </SessionProvider>
     </>
   )
 }
