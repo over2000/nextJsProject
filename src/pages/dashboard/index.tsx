@@ -11,13 +11,9 @@ const Dashboard = () => {
   let dateTime = new Date().getHours()
   let greeting = 'Boa noite'
 
- 
-  if(dateTime >= 6 && dateTime <= 12){
-   greeting = 'Bom dia'
-  }else if(dateTime >= 13 && dateTime <= 18 ){
-    greeting = 'Boa tarde'
-  }
-
+  dateTime >= 6 && dateTime <= 12 ? greeting = 'Bom dia' : greeting 
+  dateTime >= 13 && dateTime <= 18 ? greeting = 'Boa tarde' : greeting 
+   
   return (
     <div className={styles.container}>
       <Head>
