@@ -8,7 +8,15 @@ import styles from 'styles/home.module.scss'
 const Dashboard = () => {
 
   const {data} = useSession()
+  let dateTime = new Date().getHours()
+  let greeting = 'Boa noite'
 
+ 
+  if(dateTime >= 6 && dateTime <= 12){
+   greeting = 'Bom dia'
+  }else if(dateTime >= 13 && dateTime <= 18 ){
+    greeting = 'Boa tarde'
+  }
 
   return (
     <div className={styles.container}>
@@ -17,7 +25,8 @@ const Dashboard = () => {
       </Head>
     <header className={styles.header}>
       <div className={styles.user}>
-      <strong> Bem vindo {data?.user?.name}</strong>
+      <strong> 
+         {greeting} {data?.user?.name}</strong>
     
     </div>
     <button type="button" onClick={() => signOut()}>
