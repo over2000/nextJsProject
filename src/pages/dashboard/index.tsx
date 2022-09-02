@@ -1,4 +1,8 @@
 import Head from 'next/head'
+import debug from 'debug'
+const logger = debug(
+  'app:pages:dashboard:modules:processors:index'
+)
 import { GetServerSideProps } from 'next'
 import { useSession, signOut, getSession } from 'next-auth/react'
 
@@ -10,6 +14,8 @@ const Dashboard = () => {
   const {data} = useSession()
   let dateTime = new Date().getHours()
   let greeting = 'Boa noite'
+
+  logger(greeting)
 
   dateTime >= 6 && dateTime <= 12 ? greeting = 'Bom dia' : greeting 
   dateTime >= 13 && dateTime <= 18 ? greeting = 'Boa tarde' : greeting 
