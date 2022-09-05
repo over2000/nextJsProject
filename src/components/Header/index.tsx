@@ -3,6 +3,7 @@ import debug from 'debug'
 const logger = debug('app:pages:dashboard:modules:processors:index')
 import { GetServerSideProps } from 'next'
 import { useSession, signOut, getSession } from 'next-auth/react'
+import Dashboard from 'pages/dashboard'
 
 import styles from './styles.module.scss'
 
