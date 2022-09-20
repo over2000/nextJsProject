@@ -9,7 +9,7 @@ function Dashboard() {
       const session = await getSession()
       console.log({ session })
       if (!session) {
-        signIn()
+        setLoading(true)
       } else {
         setLoading(false)
       }
@@ -19,7 +19,7 @@ function Dashboard() {
   }, [])
 
   if (loading) {
-    return <h2>Loading...</h2>
+    return <h2>Please make login</h2>
   }
   return <h1>Dashboard page</h1>
 }
