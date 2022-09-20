@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className='header'>
       <h1 className='logo'>
-        <a href='#'>Empty</a>
+        <a href='/'>IFSS</a>
       </h1>
       <ul className={`main-nav ${!session && loading ? 'loading' : 'loaded'}`}>
         {!loading && !session && (
