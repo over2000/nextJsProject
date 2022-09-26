@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 
+import ThemeSwitcher from '../ThemeSwitcher'
+
 function Navbar() {
   const [session, loading] = useSession()
   return (
@@ -25,6 +27,9 @@ function Navbar() {
         )}
         {session && (
           <>
+            <li>
+              <ThemeSwitcher />
+            </li>
             <li>
               <Link href='/dashboard'>
                 <a>Dashboard</a>
