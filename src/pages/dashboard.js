@@ -21,7 +21,7 @@ function Dashboard() {
   if (loading) {
     return <h2>Please make login</h2>
   }
-  return <h1>Dashboard page</h1>
+  return <h1>Dashboard</h1>
 }
 
 export default Dashboard
