@@ -1,0 +1,44 @@
+.logo {
+  margin: 0;
+  font-size: 1.45em;
+}
+
+.nav {
+  display: flex;
+  margin-top: 5px;
+}
+
+.logo a,
+.nav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+
+.nav a {
+  color: #34495e;
+  font-size: 0.99em;
+}
+
+.nav a:hover {
+  color: #718daa;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #f4f4f4;
+}
+
+.loading {
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+.loaded {
+  opacity: 1;
+  transition: all 0.2s ease-in;
+}
