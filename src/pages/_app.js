@@ -1,7 +1,6 @@
 import { Provider } from 'next-auth/client'
-import Navbar from '../components/NavBar/Navbar'
+import Navbar from '../components/Navbar.js'
 import '../styles/globals.css'
-import '../components/NavBar/Navbar.css'
 import { AppWrapper } from '../context/state'
 
 function MyApp({ Component, pageProps }) {
