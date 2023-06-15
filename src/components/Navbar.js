@@ -15,6 +15,9 @@ function Navbar() {
       <h1 className={styles.logo}>
         <a href='/'>IFSS</a>
       </h1>
+      <Link href='/dashboard'>
+                <a>Dashboard</a>
+              </Link>
       <ul className={styles.nav}>
         {!loading && !session && (
           <li>
